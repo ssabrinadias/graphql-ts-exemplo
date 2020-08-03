@@ -2,7 +2,7 @@
 import { Resolver, Arg, Query } from 'type-graphql';
 import { User, UserModel } from '../entities/User';
 
-@Resolver((_of) => User)
+@Resolver(() => User)
 export default class UserResolver {
   service = UserModel;
 

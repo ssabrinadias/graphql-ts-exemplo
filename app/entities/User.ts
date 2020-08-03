@@ -1,5 +1,5 @@
 import { ObjectType, Field, ID } from 'type-graphql';
-import UserService from '../service/user.service';
+import UserService from '../src/service/user.service';
 
 @ObjectType({ description: 'The User model' })
 export class User {
