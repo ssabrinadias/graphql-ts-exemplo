@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "npx eslint '**/*.ts'"
+    "start": "npm run serve",
+    "serve": "node dist/server.js",
+    "watch-node": "nodemon dist/server.js",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "lint": "npx eslint '**/*.ts'",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix"
   },
   "dependencies": {
     "apollo-server-express": "^2.16.1",
