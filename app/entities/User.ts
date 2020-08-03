@@ -1,7 +1,7 @@
-/* eslint-disable no-console */
 import { ObjectType, Field, ID } from 'type-graphql';
+import UserService from '../service/user.service';
 
-@ObjectType({ description: 'The Planet model' })
+@ObjectType({ description: 'The User model' })
 export class User {
     @Field(() => ID)
     id!: number;
@@ -19,12 +19,4 @@ export class User {
     phone!: string;
 }
 
-// tslint:disable-next-line: one-variable-per-declaration
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const UserService = (id: number) => ({
-  id: 110,
-  name: 'Kelley, Hasad Z.',
-  email: 'dapibus@Nuncmauris.ca',
-  address: 'P.O. Box 858, 8605 Neque Rd.',
-  phone: '16590117 2824',
-});
+export const UserModel = UserService;

@@ -4,10 +4,11 @@
 # -----------------------------------------------
 
 type Query {
-  returnSingleUser(id: Float!): User!
+  allUser: [User!]!
+  userbyId(id: Float!): User!
 }
 
-"""The Planet model"""
+"""The User model"""
 type User {
   address: String!
   email: String!

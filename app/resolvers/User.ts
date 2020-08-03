@@ -1,18 +1,20 @@
-/* eslint-disable class-methods-use-this */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Resolver, Arg, Query } from 'type-graphql';
-import { User, UserService } from '../entities/User';
-// import UserInput from './types/User-input'
+import { User, UserModel } from '../entities/User';
 
-@Resolver(() => User)
+@Resolver((_of) => User)
 export default class UserResolver {
+  service = UserModel;
+
   @Query(() => User, { nullable: false })
-  returnSingleUser(@Arg('id') id: number): {
-    id: number,
-    name: string,
-    email: string,
-    address: string,
-    phone: string,
-  } {
-    return UserService(id);
+  async userbyId(@Arg('id') id: number) {
+    const res = await this.service.getUser(id);
+    return res;
+  }
+
+  @Query(() => [User], { nullable: false })
+  async allUser() {
+    const res = await this.service.getAllUser();
+    return res;
   }
 }
