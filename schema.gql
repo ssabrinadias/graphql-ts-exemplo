@@ -5,7 +5,8 @@
 
 type Query {
   allUser: [User!]!
-  userbyId(id: Float!): User!
+  userById(id: Float!): User!
+  walletById(id: Float!): Wallet!
 }
 
 """The User model"""
@@ -15,4 +16,11 @@ type User {
   id: ID!
   name: String!
   phone: String!
+}
+
+"""The Wallet model"""
+type Wallet {
+  brand: String!
+  id: ID!
+  pan_card: String!
 }

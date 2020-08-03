@@ -4,7 +4,7 @@ import { IUser } from '../model/user.model';
 class UserService {
   static async getUser(id: number): Promise<IUser> {
     const { data } = await HttpClient.request({
-      url: 'https://userslist.free.beeceptor.com/',
+      url: 'https://userdata.free.beeceptor.com/',
       method: 'GET',
     });
     return data[1] as IUser;
@@ -12,7 +12,7 @@ class UserService {
 
   static async getAllUser(): Promise<IUser[]> {
     const { data } = await HttpClient.request({
-      url: 'https://userslist.free.beeceptor.com/',
+      url: 'https://userdata.free.beeceptor.com/',
       method: 'GET',
     });
     return data as IUser[];

@@ -7,7 +7,7 @@ export default class UserResolver {
   service = UserModel;
 
   @Query(() => User, { nullable: false })
-  async userbyId(@Arg('id') id: number) {
+  async userById(@Arg('id') id: number) {
     const res = await this.service.getUser(id);
     return res;
   }

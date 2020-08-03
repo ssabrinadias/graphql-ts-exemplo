@@ -1,7 +1,4 @@
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { ApolloServer } from 'apollo-server-express';
 import * as Express from 'express';
 import 'reflect-metadata';
@@ -9,10 +6,11 @@ import { buildSchema } from 'type-graphql';
 
 // resolvers
 import UserResolver from './resolvers/User';
+import WalletResolver from './resolvers/Wallet';
 
 const main = async () => {
   const schema = await buildSchema({
-    resolvers: [UserResolver],
+    resolvers: [UserResolver, WalletResolver],
     emitSchemaFile: true,
     validate: false,
   });
