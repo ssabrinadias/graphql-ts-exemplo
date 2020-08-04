@@ -1,4 +1,4 @@
-import HttpClient from '../common/http/httpclient';
+import HttpClient from '../../server/common/http/httpclient';
 import { IUser } from '../model/user.model';
 
 class UserService {
@@ -7,7 +7,8 @@ class UserService {
       url: 'https://userdata.free.beeceptor.com/',
       method: 'GET',
     });
-    return data[1] as IUser;
+    const dataFilter = data.filter((item) => Number(item.id) === id);
+    return dataFilter.pop() as IUser;
   }
 
   static async getAllUser(): Promise<IUser[]> {

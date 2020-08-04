@@ -6,7 +6,7 @@
 type Query {
   allUser: [User!]!
   userById(id: Float!): User!
-  walletById(id: Float!): Wallet!
+  walletById(id: Float!): [Wallet!]!
 }
 
 """The User model"""

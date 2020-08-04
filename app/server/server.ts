@@ -5,8 +5,8 @@ import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
 
 // resolvers
-import UserResolver from './resolvers/User';
-import WalletResolver from './resolvers/Wallet';
+import UserResolver from '../resolvers/User';
+import WalletResolver from '../resolvers/Wallet';
 
 const main = async () => {
   const schema = await buildSchema({

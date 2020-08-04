@@ -6,7 +6,7 @@ import { Wallet, WalletModel } from '../entities/Wallet';
 export default class UserResolver {
   service = WalletModel;
 
-  @Query(() => Wallet, { nullable: false })
+  @Query(() => [Wallet], { nullable: false })
   async walletById(@Arg('id') id: number) {
     const res = await this.service.getWallet(id);
     return res;

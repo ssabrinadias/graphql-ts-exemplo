@@ -1,0 +1,17 @@
+{
+    "[markdown]": {
+        "editor.wordWrapColumn": 110,
+        "editor.wordWrap": "wordWrapColumn"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+      },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false,
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
