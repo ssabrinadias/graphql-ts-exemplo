@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run serve",
-    "serve": "node dist/server.js",
-    "watch-node": "nodemon dist/server.js",
+    "serve": "node dist/server/server.js",
+    "watch-node": "nodemon server/server.js",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
     "lint": "npx eslint '**/*.ts'",

@@ -3,10 +3,30 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+interface IPerson {
+  age: Int!
+  id: ID!
+  name: String!
+}
+
+type JuridicalPerson implements IPerson {
+  age: Int!
+  companyName: String!
+  id: ID!
+  name: String!
+}
+
+type Person implements IPerson {
+  age: Int!
+  id: ID!
+  name: String!
+}
+
 type Query {
   allUser: [User!]!
+  Juridical: [JuridicalPerson!]!
+  persons: [IPerson!]!
   userById(id: Float!): User!
-  walletById(id: Float!): [Wallet!]!
 }
 
 """The User model"""
@@ -16,11 +36,4 @@ type User {
   id: ID!
   name: String!
   phone: String!
-}
-
-"""The Wallet model"""
-type Wallet {
-  brand: String!
-  id: ID!
-  pan_card: String!
 }

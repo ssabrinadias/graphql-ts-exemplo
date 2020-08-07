@@ -3,14 +3,18 @@ import { ApolloServer } from 'apollo-server-express';
 import * as Express from 'express';
 import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
+import UserResolver from '../resolvers/User';
+import UserInheritance from '../resolvers/UserInheritance';
+import { Person } from '../entities/person/person.type';
+// import { NaturalPerson } from '../entities/naturalPerson/naturalPerson.type';
+// import { JuridicalPerson } from '../entities/juridicalPerson/juridicalPerson.type';
 
 // resolvers
-import UserResolver from '../resolvers/User';
-import WalletResolver from '../resolvers/Wallet';
 
 const main = async () => {
   const schema = await buildSchema({
-    resolvers: [UserResolver, WalletResolver],
+    resolvers: [UserResolver, UserInheritance],
+    orphanedTypes: [Person],
     emitSchemaFile: true,
     validate: false,
   });

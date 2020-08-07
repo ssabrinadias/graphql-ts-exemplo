@@ -4,7 +4,7 @@ import { PersonInput } from '../person/person.input';
 
 @InputType()
 // eslint-disable-next-line import/prefer-default-export
-export class EmployeeInput extends PersonInput {
+export class NaturalPersonInput extends PersonInput {
   @Field()
-  cpf: string;
+  universityName: string;
 }
