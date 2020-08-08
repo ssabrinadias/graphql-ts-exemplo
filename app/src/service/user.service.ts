@@ -8,7 +8,7 @@ class UserService {
       method: 'GET',
     });
     const dataFilter = data.filter((item) => Number(item.id) === id);
-    return dataFilter.pop() as IUser;
+    return dataFilter.pop() as IUser || [];
   }
 
   static async getAllUser(): Promise<IUser[]> {

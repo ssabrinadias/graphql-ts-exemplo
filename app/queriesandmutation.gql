@@ -1,0 +1,40 @@
+{
+  allUser {
+    address
+    name
+    id
+    email
+  }
+}
+
+
+mutation AddJuricialPerson {
+  addJuricialPerson(input: {
+    name: "Maria"
+    cnpj: "111111111111"
+  }) {
+    id
+  }
+}
+mutation AddNaturalPerson {
+  addNaturalPerson(input: {
+    name: "Joao"
+    cpf: "222222222222"
+  }) {
+    id
+  }
+}
+
+query GetPersons {
+  persons {
+    __typename
+    name
+    id
+    ... on JuridicalPerson {
+      cnpj
+    }
+    ... on NaturalPerson {
+      cpf
+    }
+  }
+}
