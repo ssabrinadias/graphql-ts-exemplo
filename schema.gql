@@ -4,27 +4,44 @@
 # -----------------------------------------------
 
 interface IPerson {
-  age: Int!
   id: ID!
   name: String!
 }
 
 type JuridicalPerson implements IPerson {
-  age: Int!
-  companyName: String!
+  cnpj: String!
   id: ID!
   name: String!
 }
 
+input JuridicalPersonInput {
+  cnpj: String!
+  name: String!
+}
+
+type Mutation {
+  addJuricialPerson(input: JuridicalPersonInput!): JuridicalPerson!
+  addNaturalPerson(input: NaturalPersonInput!): NaturalPerson!
+}
+
+type NaturalPerson implements IPerson {
+  cpf: String!
+  id: ID!
+  name: String!
+}
+
+input NaturalPersonInput {
+  cpf: String!
+  name: String!
+}
+
 type Person implements IPerson {
-  age: Int!
   id: ID!
   name: String!
 }
 
 type Query {
   allUser: [User!]!
-  Juridical: [JuridicalPerson!]!
   persons: [IPerson!]!
   userById(id: Float!): User!
 }

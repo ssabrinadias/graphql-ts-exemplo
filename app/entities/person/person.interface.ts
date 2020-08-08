@@ -14,7 +14,4 @@ export abstract class IPerson implements IResource {
 
   @Field()
   name: string;
-
-  @Field((type) => Int)
-  age: number;
 }

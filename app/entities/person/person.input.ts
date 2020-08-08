@@ -5,7 +5,4 @@ import { InputType, Field } from 'type-graphql';
 export class PersonInput {
     @Field()
     name: string;
-
-    @Field()
-    dateOfBirth: Date;
 }

@@ -6,5 +6,5 @@ import { Person } from '../person/person.type';
 // eslint-disable-next-line import/prefer-default-export
 export class JuridicalPerson extends Person {
   @Field()
-  companyName: string;
+  cnpj: string;
 }

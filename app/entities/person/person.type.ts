@@ -8,6 +8,4 @@ export class Person implements IPerson {
   id: string;
 
   name: string;
-
-  age: number;
 }

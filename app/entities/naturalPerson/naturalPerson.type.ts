@@ -5,5 +5,5 @@ import { Person } from '../person/person.type';
 // eslint-disable-next-line import/prefer-default-export
 export class NaturalPerson extends Person {
   @Field()
-  universityName: string;
+  cpf: string;
 }

@@ -5,5 +5,5 @@ import { PersonInput } from '../person/person.input';
 // eslint-disable-next-line import/prefer-default-export
 export class JuridicalPersonInput extends PersonInput {
   @Field()
-  companyName: string;
+  cnpj: string;
 }

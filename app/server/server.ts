@@ -6,8 +6,6 @@ import { buildSchema } from 'type-graphql';
 import UserResolver from '../resolvers/User';
 import UserInheritance from '../resolvers/UserInheritance';
 import { Person } from '../entities/person/person.type';
-// import { NaturalPerson } from '../entities/naturalPerson/naturalPerson.type';
-// import { JuridicalPerson } from '../entities/juridicalPerson/juridicalPerson.type';
 
 // resolvers
 
